@@ -52,7 +52,7 @@ userCtrl.getTasks = async (req, res) => {
   );
 }
 
-userCtrl.getTasksPrivates = async(req, res) => {
+userCtrl.getPrivateTasks = async(req, res) => {
   res.json(
     [
       {

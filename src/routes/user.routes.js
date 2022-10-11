@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 router.post("/signup", user.signup);
 router.post("/signin", user.signin);
 router.get("/tasks", user.getTasks);
-router.get("/tasks-privates", verifiyToken, user.getTasksPrivates);
+router.get("/private-tasks", verifiyToken, user.getPrivateTasks);
 
 module.exports = router; 
 
