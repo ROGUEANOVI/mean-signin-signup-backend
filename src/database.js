@@ -1,6 +1,9 @@
 const mongosee = require("mongoose");
 
-const URI = "mongodb+srv://ROGUEANOVI:2011@cluster0.oybph6d.mongodb.net/mean-signin-signup";
+const URI = process.env.MONGODB_URI 
+? process.env.MONGODB_URI 
+: "mongodb://localhost/test";
+
 mongosee.connect(URI)
 
   .then(db => console.log("Database is connected"))

@@ -3,7 +3,6 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const routes = require("./routes/user.routes")
-
 const server = express();
 
 // Setting
@@ -16,5 +15,6 @@ server.use(morgan("dev"));
 
 //Routes
 server.use("/api/users",routes);
+
 
 module.exports = server;

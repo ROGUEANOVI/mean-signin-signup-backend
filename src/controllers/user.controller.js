@@ -31,20 +31,20 @@ userCtrl.getTasks = async (req, res) => {
   res.json(
     [
       {
-        "-id": 1,
+        "_id": 1,
         "name": "Task one",
-        "description": "loren ipsum",
+        "description": "Do the dishes",
         "date": "2022-10-10T21:46:17.180+00:00"
       },
       {
-        "-id": 2,
+        "_id": 2,
         "name": "Task two",
-        "description": "loren ipsum",
+        "description": "Walk the dog",
         "date": "2022-10-10T21:46:17.180+00:00"
       },
       {
-        "-id": 1,
-        "name": "Task three",
+        "_id": 3,
+        "name": "Wather the plants",
         "description": "loren ipsum",
         "date": "2022-10-10T21:46:17.180+00:00"
       }
@@ -56,20 +56,20 @@ userCtrl.getPrivateTasks = async(req, res) => {
   res.json(
     [
       {
-        "-id": 1,
+        "_id": 1,
         "name": "Task one private",
-        "description": "loren ipsum",
+        "description": "Do the laundry",
         "date": "2022-10-10T21:46:17.180+00:00"
       },
       {
-        "-id": 2,
+        "_id": 2,
         "name": "Task two private",
-        "description": "loren ipsum",
+        "description": "Tidy the room",
         "date": "2022-10-10T21:46:17.180+00:00"
       },
       {
-        "-id": 1,
-        "name": "Task three private",
+        "_id": 3,
+        "name": "Task Take out rhe garbage",
         "description": "loren ipsum",
         "date": "2022-10-10T21:46:17.180+00:00"
       }
