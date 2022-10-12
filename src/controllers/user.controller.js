@@ -1,5 +1,5 @@
-const express = require("express");
-const User = require("../models/user.model");
+// const express = require("express");
+const userModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userCtrl = {};
@@ -9,7 +9,7 @@ userCtrl.signup = async (req, res) => {
   const {email, password} = req.body;
   const passwordHash = await bcrypt.hash(password, 10);
   console.log(passwordHash);
-  const newUser = new User({email, passwordHash});
+  const newUser = new userModel({email, passwordHash});
   await newUser.save();
   const token = jwt.sign({_id: newUser._id}, "secretkey");
   res.status(200).json({token});
@@ -17,7 +17,7 @@ userCtrl.signup = async (req, res) => {
 
 userCtrl.signin = async (req, res) => {
   const {email, password} = req.body;
-  const user = await User.findOne({email});
+  const user = await userModel.findOne({email});
   console.log(typeof user);
   if(!user) return res.status(401).send("The email doesn't exists");
   const compare = await bcrypt.compare(password, user.passwordHash);

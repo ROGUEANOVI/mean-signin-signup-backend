@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const user = require("../controllers/user.controller");
+const userCtrl = require("../controllers/user.controller");
 const jwt = require("jsonwebtoken");
 
-router.post("/signup", user.signup);
-router.post("/signin", user.signin);
-router.get("/tasks", user.getTasks);
-router.get("/private-tasks", verifiyToken, user.getPrivateTasks);
+router.post("/signup", userCtrl.signup);
+router.post("/signin", userCtrl.signin);
+router.get("/tasks", userCtrl.getTasks);
+router.get("/private-tasks", verifiyToken, userCtrl.getPrivateTasks);
 
 module.exports = router; 
 
